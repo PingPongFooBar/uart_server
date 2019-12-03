@@ -9,7 +9,6 @@
 int fd;
 char path[20];
 void oc_handler(int num){
-	int i;
 	ioctl(fd,OFF);
 }
 
