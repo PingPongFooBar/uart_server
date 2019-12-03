@@ -1,5 +1,29 @@
-#include <fcntl.h>#include <stdlib.h>#include <unistd.h>#include <sys/ioctl.h>#include <stdio.h>#include <string.h>#include "junction_app.h"/* 第一个参数为命令，第二个参数为第几路 */int main(int argc, char **argv){	int fd;	char path[20];	snprintf(path,20,"/dev/junction%s",argv[2]);	fd = open(path,O_RDWR);
-	if(!strcmp(argv[1],"on"))		ioctl(fd,ON);
-		else if(!strcmp(argv[1],"off"))		ioctl(fd,OFF);	else if(!strcmp(argv[1],"rst"))
-				ioctl(fd,OC_RST);	close(fd);
-		return 0;	}
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/ioctl.h>
+#include <stdio.h>
+#include <string.h>
+#include "junction_app.h"
+
+/* 绗竴涓弬鏁颁负鍛戒护锛岀浜屼釜鍙傛暟涓虹鍑犺矾 */
+int main(int argc, char **argv)
+{
+	int fd;
+	char path[20];
+	snprintf(path,20,"/dev/junction%s",argv[2]);
+	fd = open(path,O_RDWR);
+
+	if(!strcmp(argv[1],"on"))
+		ioctl(fd,ON);
+	
+	else if(!strcmp(argv[1],"off"))
+		ioctl(fd,OFF);
+	else if(!strcmp(argv[1],"rst"))
+		
+		ioctl(fd,OC_RST);
+
+	close(fd);
+	
+	return 0;	
+}
