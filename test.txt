@@ -1,3 +1,9 @@
 this is a test file
 muhui change this file
 muhui is a queue
+<<<<<<< HEAD
+i agree
+zejian add a new line
+=======
+a new day
+>>>>>>> muhui
